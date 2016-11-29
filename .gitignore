@@ -1,0 +1,8 @@
+*.pyc
+*.log
+*.out
+*.svn
+*.cache
+t1
+con_sock_log
+.DS_Store

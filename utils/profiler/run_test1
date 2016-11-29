@@ -1,0 +1,2 @@
+python -m cProfile -o test1.out test1.py
+

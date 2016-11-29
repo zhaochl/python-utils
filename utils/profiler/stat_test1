@@ -1,0 +1,1 @@
+python -c "import pstats; p=pstats.Stats('test1.out'); p.print_stats()"

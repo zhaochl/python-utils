@@ -1,0 +1,1 @@
+nohup python -u `pwd`/server.py >> _server.log &

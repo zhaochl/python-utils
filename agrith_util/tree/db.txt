@@ -1,0 +1,2 @@
+news_db project_tab_ir
+select * from project_tab_ir limit 1\G;

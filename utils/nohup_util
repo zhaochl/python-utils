@@ -1,0 +1,1 @@
+nohup python -u pre_process_log.py run>>run.log 2>&1 &

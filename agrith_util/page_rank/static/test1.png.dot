@@ -1,0 +1,17 @@
+strict digraph  {
+	graph [epsilon="0.001"];
+	A -> D;
+	A -> B;
+	A -> C;
+	B -> E;
+	B -> D;
+	C -> E;
+	D -> E;
+	E -> A;
+	T -> E;
+	T -> D;
+	T -> A;
+	T -> B;
+	T -> T;
+	T -> C;
+}

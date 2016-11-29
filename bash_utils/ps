@@ -1,0 +1,2 @@
+ps -elf|grep session
+ps -elf|grep job_main_fix

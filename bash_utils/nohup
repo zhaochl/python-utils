@@ -1,0 +1,3 @@
+#!/bin/bash 
+#nohup ./run.sh &
+nohup python -u job_main_fix.py >>_run.log &

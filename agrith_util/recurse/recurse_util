@@ -1,0 +1,88 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"""非递归方式呈现"""
+
+def sum_regular(n):
+    sum = 0
+    for obj in range(1,3):
+        sum+=obj
+    print sum
+
+""""
+s=1+2+3+...+100
+"""
+def sum_r(n):
+    sum_r0=0
+    sum_r1=0
+    if n<=0:
+        return 0
+    else:
+        sum_r0 = sum_r(n-1)
+        sum_r1 = n+sum_r0
+        return sum_r1
+
+""""
+s=1+2+3+...+100
+"""
+def sum_r_list(n):
+    result = []
+    sum_r0=0
+    sum_r1=0
+    if n<=0:
+        return 0
+    else:
+        sum_r0 = sum_r(n-1)
+        sum_r1 = n+sum_r0
+        return sum_r1
+
+"""
+递归计算斐波数列和
+0,1,1,2,3,5
+"""
+def fab_r(n):
+    fab_rn=0
+    fab_rn_1=0
+    fab_rn_2=0
+    if n==0:
+        return 0
+    elif n==1:
+        return 1
+    else:
+        fab_rn_1 = fac_r(n-1)
+        fab_rn_2 = fac_r(n-2)
+        fab_rn = int(fab_rn_1)+int(fab_rn_2)
+        return fab_rn
+"""
+递归输出list
+"""
+def print_list_r(l):
+    for r in l:
+        #if not isinstance(r,list):
+        if type(r)!=list:
+            print r
+        else:
+            print_list_r(r)
+
+"""
+阶乘
+s = 1,2,3,5
+"""
+def fac_r(n):
+    fac_r0=0
+    fac_r1=0
+    if n==0 or n==1:
+        return 1
+    else:
+        fac_r0 = fac_r(n-1)
+        fac_r1 = n*fac_r0
+        return fac_r1
+if __name__=='__main__':
+    t = fac_r(3)
+    print t
+    t=sum_r(3)
+    print t
+    t= fab_r(3)
+    print t
+    movies = ["aaa","bbb","ccc","ddd",["qqq","sss",["mmm","rrr",["tt","ccs"]]]] 
+    print_list_r(movies)
