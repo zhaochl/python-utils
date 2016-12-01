@@ -1,0 +1,3 @@
+#!/bin/bash
+rm -rf _run.log
+nohup ./run_batch.sh >>_run.log 2>&1 &
