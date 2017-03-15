@@ -1,0 +1,2 @@
+#!/bin/bash
+dot graph.dot -Tpng -o graph.png  -Gsplines=line  -Gsplines=line
