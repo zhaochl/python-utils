@@ -1,0 +1,48 @@
+strict digraph  {
+	graph [epsilon="0.001"];
+	{
+		graph [rank=same];
+		a		 [style=invis];
+		2 -> a		 [style=invis];
+		a -> 3		 [style=invis];
+	}
+	{
+		graph [rank=same];
+		b		 [style=invis];
+		4 -> b		 [style=invis];
+		b -> 5		 [style=invis];
+	}
+	{
+		graph [rank=same];
+		c		 [style=invis];
+		6 -> c		 [style=invis];
+		c -> 7		 [style=invis];
+	}
+	{
+		graph [rank=same];
+		d		 [style=invis];
+		8 -> d		 [style=invis];
+		d -> 9		 [style=invis];
+	}
+	{
+		graph [rank=same];
+		e		 [style=invis];
+		10 -> e		 [style=invis];
+		e -> 11		 [style=invis];
+	}
+	1 -> a	 [style=invis];
+	1 -> 2;
+	1 -> 3;
+	2 -> 5;
+	2 -> b	 [style=invis];
+	2 -> 4;
+	3 -> 9;
+	3 -> d	 [style=invis];
+	3 -> 8;
+	5 -> 6;
+	5 -> 7;
+	5 -> c	 [style=invis];
+	8 -> 11;
+	8 -> e	 [style=invis];
+	8 -> 10;
+}
