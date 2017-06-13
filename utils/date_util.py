@@ -5,6 +5,7 @@ from datetime import *
 import time
 from math import *
 import calendar
+import re
 
 """
 for sleep
@@ -344,8 +345,45 @@ def test():
     print month_range
     table_prefix ='log'
     print get_now_table(table_prefix)
+
+
+# 将计时器"时:分:秒"字符串转换为秒数间隔
+def time2itv(sTime):
+
+    p="^([0-9]+):([0-5][0-9]):([0-5][0-9])$"
+    cp=re.compile(p)
+    try:
+        mTime=cp.match(sTime)
+    except TypeError:
+        return "[InModuleError]:time2itv(sTime) invalid argument type"
+
+    if mTime:
+        t=map(int,mTime.group(1,2,3))
+        return 3600*t[0]+60*t[1]+t[2]
+    else:
+        return "[InModuleError]:time2itv(sTime) invalid argument value"
+
+
+# 将秒数间隔转换为计时器"时:分:秒"字符串
+def itv2time(iItv):
+
+    if type(iItv)==type(1):
+        h=iItv/3600
+        sUp_h=iItv-3600*h
+        m=sUp_h/60
+        sUp_m=sUp_h-60*m
+        s=sUp_m
+        return ":".join(map(str,(h,m,s)))
+    else:
+        return "[InModuleError]:itv2time(iItv) invalid argument type"
+
+
 if __name__=='__main__':
-    test()
+    #test()
+    sTime="1223:34:15"
+    print time2itv(sTime)
+    print itv2time("451223")
+    print itv2time("0.00225694444444")
 def test2():
     n = datetime.now()
     str = datetime_toString(n)
